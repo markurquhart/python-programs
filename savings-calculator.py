@@ -10,6 +10,7 @@ print()
 savings = initial_savings
 for i in range(years):
     print(' Savings in year {}: ${:,.2f}'.format(i, savings))
-    savings = savings + (savings*interest_rate) + (monthly_incremental*12)
+    # this math indiciates interest that compounds on a yearly basis
+    savings = savings + (monthly_incremental*12) + ((savings+(monthly_incremental*12))*interest_rate)
 
 print('\n')
